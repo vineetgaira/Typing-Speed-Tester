@@ -1,5 +1,5 @@
-from src.passage import load_passages
-from src.display import show_passage,welcome,show_menu
+from src.passage import next_passage
+from src.display import welcome,show_menu,show_passage
 
 
 def main():

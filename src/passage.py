@@ -1,16 +1,31 @@
 from pathlib import Path
 import random
 
-def load_passages(difficulty):
-    pass
+_index={}
 
+def load_all(difficulty="hard"):
 
-def random_passage():
-
-    text = Path("passage/easy.txt").read_text(encoding="utf-8")
+    text = Path(f"passage/{difficulty}.txt").read_text(encoding="utf-8")
     passages = text.split("\n\n")
 
-    return random.choice(passages)
+    return passages
+
+def next_passage(difficulty="hard"):
+    passages=load_all(difficulty)
+    pos = _index.get(difficulty, 0)
+
+    passage=passages[pos%len(passages)]
+    _index[difficulty] = pos + 1
+
+    return passage
+
+
+def reset_sequence(difficulty="hard"):
+
+    _index[difficulty]=0
+
+def random_passage():
+    pass
 
 
 def load_category(difficulty):
