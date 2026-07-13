@@ -1,29 +1,36 @@
 import textwrap
 import colorama
-from colorama import Fore
+from colorama import Fore, Style
 colorama.init(autoreset=True)
 
-def welcome():
-    print(Fore.LIGHTBLUE_EX+r""" _____          _             ___                  _   _____       _
+
+BANNER=r""" _____          _             ___                  _   _____       _
 |_   _|  _ _ __(_)_ _  __ _  / __|_ __  ___ ___ __| | |_   _|__ __| |_ ___ _ _
   | || || | '_ \ | ' \/ _` | \__ \ '_ \/ -_) -_) _` |   | |/ -_|_-<  _/ -_) '_|
   |_| \_, | .__/_|_||_\__, | |___/ .__/\___\___\__,_|   |_|\___/__/\__\___|_|
       |__/|_|         |___/      |_|
-""")
+"""
+
+def welcome():
+    print(Fore.CYAN + BANNER)
+    print(Fore.YELLOW + Style.BRIGHT + " " * 20 + "by -Vineet Gaira\n")
 
 def show_menu():
-    print(Fore.LIGHTBLUE_EX+r"""
-==============================================
-                MAIN MENU
-==============================================
-  [1] Start Typing Test
-  [2] Select Difficulty (Easy / Medium / Hard)
-  [3] View High Scores
-  [4] View History
-  [5] Exit
-==============================================
 
-""")
+    print(Fore.MAGENTA + "=" * 46)
+    print(Fore.GREEN + Style.BRIGHT + "               MAIN MENU")
+    print(Fore.MAGENTA + "=" * 46)
+
+    print(Fore.WHITE + "  [1] " + Fore.CYAN + "Start Typing Test")
+    print(Fore.WHITE + "  [2] " + Fore.CYAN + "Select Difficulty (Easy / Medium / Hard)")
+    print(Fore.WHITE + "  [3] " + Fore.CYAN + "Select Category")
+    print(Fore.WHITE + "  [4] " + Fore.CYAN + "View High Scores")
+    print(Fore.WHITE + "  [5] " + Fore.CYAN + "View History")
+    print(Fore.WHITE + "  [6] " + Fore.RED + "Exit")
+
+    print(Fore.MAGENTA + "=" * 46)
+    choice = input(Fore.GREEN + Style.BRIGHT + "Enter your choice: " + Style.RESET_ALL)
+    return choice
 
 def show_passage(passage):
 
