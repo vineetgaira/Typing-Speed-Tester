@@ -6,7 +6,7 @@ def main_menu():
 
 def select_category():
 
-    valid_choices={}
+    valid_choices={1,2,3,4,5,6}
     while True:
         try:
             user_choice=int(input("Select category: "))
@@ -16,7 +16,6 @@ def select_category():
                 print("Please select a valid number.")
         except ValueError:
             print("Please select a valid integer.")
-
 
 def select_difficulty():
     valid_choices={1,2,3}
@@ -35,10 +34,9 @@ def play_again():
     while True:
         user_exit=input("Do you wanna try again? y/n :")
         if user_exit=="y":
-            break
+            return True
         elif user_exit=="n":
-            print("Thanks for trying it...")
-            return
+            return False
         else:
             print("Please enter a valid choice(y/n).")
 

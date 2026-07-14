@@ -32,10 +32,40 @@ def show_menu():
     choice = input(Fore.GREEN + Style.BRIGHT + "Enter your choice: " + Style.RESET_ALL)
     return choice
 
+
+def show_difficulty():
+    print(Fore.MAGENTA + "=" * 26)
+    print(Fore.GREEN + Style.BRIGHT + "      DIFFICULTY MENU")
+    print(Fore.MAGENTA + "=" * 26)
+
+    print(Fore.WHITE + "  [1] " + Fore.CYAN + "Easy")
+    print(Fore.WHITE + "  [2] " + Fore.CYAN + "Medium")
+    print(Fore.WHITE + "  [3] " + Fore.CYAN + "Hard")
+
+    print(Fore.MAGENTA + "=" * 26)
+
+def show_category():
+
+    print(Fore.MAGENTA + "=" * 26)
+    print(Fore.GREEN + Style.BRIGHT + "      CATEGORY MENU")
+    print(Fore.MAGENTA + "=" * 26)
+
+    print(Fore.WHITE + "  [1] " + Fore.CYAN + "General Knowledge")
+    print(Fore.WHITE + "  [2] " + Fore.CYAN + "History")
+    print(Fore.WHITE + "  [3] " + Fore.CYAN + "Literature")
+    print(Fore.WHITE + "  [4] " + Fore.CYAN + "Programming")
+    print(Fore.WHITE + "  [5] " + Fore.CYAN + "Quotes")
+    print(Fore.WHITE + "  [6] " + Fore.CYAN + "Science")
+
+    print(Fore.MAGENTA + "=" * 26)
+
+
 def show_passage(passage):
 
     wrapped_text = textwrap.fill(passage, width=70)
     print(Fore.LIGHTBLUE_EX+wrapped_text)
+
+
 
 def show_results():
     pass

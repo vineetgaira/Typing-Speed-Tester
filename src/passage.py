@@ -1,10 +1,21 @@
 from pathlib import Path
 import random
 
-index_difficulty={1: "easy",
-                  2: "medium",
-                  3: "hard"}
-index_category={}
+index_difficulty={
+    1: "easy",
+    2: "medium",
+    3: "hard"
+}
+
+index_category={
+    1: "general",
+    2: "history",
+    3: "literature",
+    4: "programming",
+    5: "quotes",
+    6: "science"
+
+}
 
 def load_all(difficulty="hard"):
 
