@@ -1,15 +1,20 @@
 import time
 
 def start_time():   
+
+# This will start timer
     
-    return time.perf_counter()
+   return time.perf_counter()
 
 def end_time():
-     
-   return time.perf_counter
+# This will pause timer
+
+   return time.perf_counter()
 
 def elapsed_time(start_time,end_time):
+# This is the total time taken
    
-   elapsed_time=end_time - start_time
+   return int(end_time - start_time)/60  # Converting it to minutes to make it later useful
 
-   return elapsed_time
+
+  

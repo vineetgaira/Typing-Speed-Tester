@@ -6,15 +6,12 @@ def get_user_input(passage):
         print("You have wrote the whole passage.")
     return user_input
         
+def compare_text(passage, user_input):
 
-def compare_text():
-    pass
+    for letter in passage:
+        for l in user_input:
+            letter==l
 
 def count_errors():
     pass
 
-def calculate_accuracy():
-    pass
-
-def calculate_wpm():
-    pass
