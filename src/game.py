@@ -4,7 +4,6 @@ colorama.init(autoreset=True)
 from src.passage import next_passage,index_difficulty,index_category
 from src.display import welcome,show_menu,show_passage,show_difficulty,show_category
 
-from src.game import select_category,select_difficulty,play_again,select_from_menu
 from src.statistics import count_errors
 from src.typing import get_user_input
 from src.timer import start_time,end_time,elapsed_time
@@ -17,8 +16,12 @@ def main_menu():
     show_menu()
     choice=select_from_menu()
     if choice==1:
-        passage=show_passage()
+        passage=next_passage()
+        show_passage(passage)
+        start=start_time()
         get_user_input(passage)
+        end=end_time()
+        return elapsed_time(start,end)
     elif choice==2:
         show_difficulty()
         difficulty_user=select_difficulty()
@@ -30,6 +33,7 @@ def main_menu():
         category_dict=index_category[category_user]
         return category_dict
     elif choice==6:
+        print("Thanks for being here...")
         return
     else:
         print("Coming soon!")
