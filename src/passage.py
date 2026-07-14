@@ -8,7 +8,7 @@ index_category={}
 
 def load_all(difficulty="hard"):
 
-    text = Path(f"passage/{difficulty}.txt").read_text(encoding="utf-8")
+    text = Path(f"passage/difficulty/{difficulty}.txt").read_text(encoding="utf-8")
     passages = text.split("\n\n")
 
     return passages
@@ -37,7 +37,7 @@ def random_passage(difficulty):
     
 def load_category(category):
 # This loads all the passages for selected category
-    text = Path(f"passage/{category}.txt").read_text(encoding="utf-8")
+    text = Path(f"passage/category/{category}.txt").read_text(encoding="utf-8")
     passages = text.split("\n\n")
 
     return passages

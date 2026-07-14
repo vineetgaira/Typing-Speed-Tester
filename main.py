@@ -7,6 +7,7 @@ from src.timer import start_time,end_time,elapsed_time
 def main():
     start=start_time()
     passage=next_passage()
+    show_passage(passage)
     end=end_time()
     print(elapsed_time(start,end))
 
