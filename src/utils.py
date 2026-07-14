@@ -1,8 +1,6 @@
 def clear_screen():
-    pass
 
-def valid_choice():
-    pass
+        print("\033[H\033[J", end="")
 
 def pause():
     pass
