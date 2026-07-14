@@ -1,11 +1,30 @@
-def calculate_wpm():
-    pass
+def count_errors(passage,user_input):
+    count=0
+    for i, letter in enumerate(passage):
+        for u, uletter in enumerate(user_input):
+            if i==u and letter!=uletter:
+                count+=1 
+    return count
 
-def calculate_cpm():
-    pass
+def calculate_wpm(passage,elapsed_time):
 
-def calculate_accuracy():
-    pass
+    words = len(passage)/5
+
+    return words/elapsed_time
+
+def net_wpm(cpm,count,elapsed_time):
+
+    uncorrect_error_wpm = count/elapsed_time
+
+    return cpm-uncorrect_error_wpm
+
+def calculate_cpm(passage,elapsed_time):
+    
+    return len(passage)/elapsed_time
+
+def calculate_accuracy(passage,count):
+    
+    return (len(passage)/count)*100
 
 def save_score():
     pass
@@ -13,5 +32,4 @@ def save_score():
 def load_best_score():
     pass
 
-def average_wpm():
-    pass
+    
