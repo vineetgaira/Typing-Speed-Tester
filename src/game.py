@@ -8,7 +8,19 @@ def select_category():
     pass
 
 def select_difficulty():
-    pass
+    valid_choices={1,2,3}
+    while True:
+        try:
+            user_choice=int(input("Select difficulty: "))
+            if user_choice in valid_choices:
+                return user_choice
+                break
+            else:
+                print("Please select a valid number.")
+        except ValueError:
+            print("Please select a valid integer.")
 
 def play_again():
     pass
+
+
