@@ -31,6 +31,14 @@ def select_difficulty():
             print("Please select a valid integer.")
 
 def play_again():
-    pass
 
+    while True:
+        user_exit=input("Do you wanna try again? y/n :")
+        if user_exit=="y":
+            break
+        elif user_exit=="n":
+            print("Thanks for trying it...")
+            return
+        else:
+            print("Please enter a valid choice(y/n).")
 
