@@ -1,9 +1,25 @@
+import colorama
+from colorama import Fore,Style
+
 def play_game():
     pass
 
 def main_menu():
     pass
 
+def select_from_menu():
+
+    valid_choices={1,2,3,4,5,6}
+    while True:
+        try:
+            choice=int(input(Fore.GREEN + Style.BRIGHT + "Enter your choice: "))
+            if choice in valid_choices:
+                return choice
+            else:
+                print("Please select a valid number.")
+        except ValueError:
+            print("Please select a valid integer.")
+    
 def select_category():
 
     valid_choices={1,2,3,4,5,6}
@@ -30,7 +46,7 @@ def select_difficulty():
             print("Please select a valid integer.")
 
 def play_again():
-
+    
     while True:
         user_exit=input("Do you wanna try again? y/n :")
         if user_exit=="y":
@@ -39,4 +55,3 @@ def play_again():
             return False
         else:
             print("Please enter a valid choice(y/n).")
-
