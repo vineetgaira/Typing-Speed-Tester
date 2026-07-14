@@ -1,8 +1,15 @@
-def start_time():
-    pass
+import time
+
+def start_time():   
+    
+    return time.perf_counter()
 
 def end_time():
-    pass
+     
+   return time.perf_counter
 
-def elapsed_time():
-    pass
+def elapsed_time(start_time,end_time):
+   
+   elapsed_time=end_time - start_time
+
+   return elapsed_time

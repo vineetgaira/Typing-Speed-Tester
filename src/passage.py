@@ -1,7 +1,10 @@
 from pathlib import Path
 import random
 
-_index={}
+index_difficulty={1: "easy",
+                  2: "medium",
+                  3: "hard"}
+index_category={}
 
 def load_all(difficulty="hard"):
 
@@ -12,24 +15,29 @@ def load_all(difficulty="hard"):
 
 def next_passage(difficulty="hard"):
     passages=load_all(difficulty)
-    pos = _index.get(difficulty, 0)
+    pos = index_difficulty.get(difficulty, 0)
 
     passage=passages[pos%len(passages)]
-    _index[difficulty] = pos + 1
+    index_difficulty[difficulty] = pos + 1
 
     return passage
 
 
 def reset_sequence(difficulty="hard"):
 
-    _index[difficulty]=0
+    index_difficulty[difficulty]=0
 
-def random_passage():
-    pass
+def random_passage(difficulty):
 
+#This returns a random passage 
+    text = Path(f"passage/{difficulty}.txt").read_text(encoding="utf-8")
+    passages = text.split("\n\n")
 
-def load_category(difficulty):
-    pass
+    return random.choice(passages)
+    
+def load_category(category):
+# This loads all the passages for selected category
+    text = Path(f"passage/{category}.txt").read_text(encoding="utf-8")
+    passages = text.split("\n\n")
 
-def load_difficulty():
-    pass
+    return passages
