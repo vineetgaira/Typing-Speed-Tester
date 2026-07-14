@@ -7,15 +7,7 @@ from src.typing import get_user_input
 from src.timer import start_time,end_time,elapsed_time
 
 def main():
-
-    passage=next_passage()
-    show_passage(passage)
-    user_input=get_user_input(passage)
-    print(count_errors(passage,user_input))
-    
-
-
-
+    pass
   
 if __name__ == "__main__":
     main()

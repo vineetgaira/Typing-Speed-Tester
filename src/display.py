@@ -55,16 +55,15 @@ def show_category():
 
     print(Fore.MAGENTA + "=" * 26)
 
-
 def show_passage(passage):
 
     wrapped_text = textwrap.fill(passage, width=70)
     print(Fore.LIGHTBLUE_EX+wrapped_text)
 
-
-
-def show_results():
-    pass
+def show_results(wpm,cpm,accuracy):
+    print(Fore.WHITE + "  WPM :" + Fore.CYAN + f"{wpm}")
+    print(Fore.WHITE + "  CPM :" + Fore.CYAN + f"{cpm}")
+    print(Fore.WHITE + "  ACCURACY :" + Fore.CYAN + f"{accuracy}")
 
 def show_best_score():
     pass
