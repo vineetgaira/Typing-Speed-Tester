@@ -28,10 +28,6 @@ def show_menu():
     print(Fore.WHITE + "  [5] " + Fore.CYAN + "View History")
     print(Fore.WHITE + "  [6] " + Fore.RED + "Exit")
 
-    print(Fore.MAGENTA + "=" * 46)
-    choice = input(Fore.GREEN + Style.BRIGHT + "Enter your choice: " + Style.RESET_ALL)
-    return choice
-
 
 def show_difficulty():
     print(Fore.MAGENTA + "=" * 26)
