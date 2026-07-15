@@ -14,7 +14,10 @@ def play_game():
 
 def main_menu():
 # This should only print the main menu 
-    pass
+    show_menu()
+    choice=select_from_menu()
+    
+    return choice
         
     
 def select_from_menu():
