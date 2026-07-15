@@ -11,14 +11,17 @@ from src.timer import start_time,end_time,elapsed_time
 
 def play_game():
     while True:
+        welcome()
         show_menu()
         choice=select_from_menu()
         if choice==1:
             passage=next_passage("easy")
             show_passage(passage)
-            start_time()
+            start=start_time()
             user_input=get_user_input(passage)
-            end_time()
+            end=end_time()
+            elapsed_time(start,end)
+
         elif choice==2:
             show_difficulty()
             difficulty_choices=select_difficulty()
@@ -28,6 +31,7 @@ def play_game():
             start=start_time()
             user_input_difficulty=get_user_input(passage)
             end=end_time()
+            elapsed_time(start,end)
         elif choice==3:
             show_category()
             category_choices=select_category()
@@ -37,6 +41,8 @@ def play_game():
             start=start_time()
             user_input_category=get_user_input(passage)
             end=end_time()
+            elapsed_time(start,end)
+            
         elif choice==6:
             print(Fore.GREEN+Style.BRIGHT+"Thanks for playing...")
             return

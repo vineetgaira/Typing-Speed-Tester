@@ -6,4 +6,5 @@ def pause():
     pass
 
 def exit_program():
-    pass
+    paletter="This is Vineet Gaiuletter="This is not Vineet Gaira"
+
