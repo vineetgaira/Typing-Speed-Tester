@@ -4,9 +4,9 @@ colorama.init(autoreset=True)
 from src.passage import next_passage,index_difficulty,index_category, category_passage
 from src.display import welcome,show_menu,show_passage,show_difficulty,show_category
 
-from src.statistics import count_errors
+from src.statistics import count_errors,calculate_accuracy,calculate_cpm,calculate_wpm
 from src.typing import get_user_input
-from src.timer import start_time,end_time,elapsed_time
+from src.timer import start_time,end_time, elapsed_time
 
 
 def play_game():
@@ -20,7 +20,9 @@ def play_game():
             start=start_time()
             user_input=get_user_input(passage)
             end=end_time()
-            elapsed_time(start,end)
+            time=elapsed_time(start,end)
+            errors=count_errors(passage,user_input)
+            wpm=calculate_wpm(time)
 
         elif choice==2:
             show_difficulty()
@@ -31,7 +33,10 @@ def play_game():
             start=start_time()
             user_input_difficulty=get_user_input(passage)
             end=end_time()
-            elapsed_time(start,end)
+            time=elapsed_time(start,end)
+            count_errors(passage,user_input_difficulty)
+            wpm=calculate_wpm(passage,time)
+            cpm=calculate_cpm()
         elif choice==3:
             show_category()
             category_choices=select_category()
@@ -41,7 +46,8 @@ def play_game():
             start=start_time()
             user_input_category=get_user_input(passage)
             end=end_time()
-            elapsed_time(start,end)
+            time=elapsed_time(start,end)
+            count_errors(passage,user_input_category)
             
         elif choice==6:
             print(Fore.GREEN+Style.BRIGHT+"Thanks for playing...")

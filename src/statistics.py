@@ -14,11 +14,11 @@ def calculate_wpm(passage,elapsed_time):
 
     return words/elapsed_time
 
-def net_wpm(cpm,count,elapsed_time):
+def net_wpm(wpm,count,elapsed_time):
 
     uncorrect_error_wpm = count/elapsed_time
 
-    return cpm-uncorrect_error_wpm
+    return wpm-uncorrect_error_wpm
 
 def calculate_cpm(passage,elapsed_time):
     
