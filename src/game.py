@@ -18,11 +18,10 @@ def main_menu():
         show_menu()
         choice=select_from_menu()
         if choice==6:
-            print("Thanks for being here..")
+            print(Fore.CYAN+Style.BRIGHT+"Thanks for being here.."+Style.RESET_ALL)
             return
         return choice
         
-   
     
 def select_from_menu():
 
