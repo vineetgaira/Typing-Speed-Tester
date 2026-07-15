@@ -13,30 +13,8 @@ def play_game():
     pass
 
 def main_menu():
-    show_menu()
-    choice=select_from_menu()
-    if choice==1:
-        passage=next_passage()
-        show_passage(passage)
-        start=start_time()
-        get_user_input(passage)
-        end=end_time()
-        return elapsed_time(start,end)
-    elif choice==2:
-        show_difficulty()
-        difficulty_user=select_difficulty()
-        difficulty_dict=index_difficulty[difficulty_user]
-        return difficulty_dict
-    elif choice==3:
-        show_category()
-        category_user=select_category()
-        category_dict=index_category[category_user]
-        return category_dict
-    elif choice==6:
-        print("Thanks for being here...")
-        return
-    else:
-        print("Coming soon!")
+# This should only print the main menu 
+    pass
         
     
 def select_from_menu():
