@@ -17,14 +17,14 @@ index_category={
 
 }
 
-def load_all(difficulty="hard"):
+def load_all(difficulty):
 
     text = Path(f"passage/difficulty/{difficulty}.txt").read_text(encoding="utf-8")
     passages = text.split("\n\n")
 
     return passages
 
-def next_passage(difficulty="hard"):
+def next_passage(difficulty):
     passages=load_all(difficulty)
     pos = index_difficulty.get(difficulty, 0)
 
@@ -34,7 +34,7 @@ def next_passage(difficulty="hard"):
     return passage
 
 
-def reset_sequence(difficulty="hard"):
+def reset_sequence(difficulty):
 
     index_difficulty[difficulty]=0
 
