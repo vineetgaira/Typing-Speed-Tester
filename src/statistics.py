@@ -1,3 +1,5 @@
+import json
+
 def count_errors(passage,user_input):
     count=0
     for i, letter in enumerate(passage):
@@ -27,7 +29,13 @@ def calculate_accuracy(passage,count):
     return (len(passage)/count)*100
 
 def save_score():
-    pass
+    
+    with open("data/highscores.json", "r") as f:
+        data = json.load(f)  
+
+    with open ("data/history.json", "w") as f:
+        json.dump(data, f, indent=4)
+
 
 def load_best_score():
     pass
