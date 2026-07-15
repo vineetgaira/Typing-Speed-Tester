@@ -14,11 +14,15 @@ def play_game():
 
 def main_menu():
 # This should only print the main menu 
-    show_menu()
-    choice=select_from_menu()
-    
-    return choice
+    while True:
+        show_menu()
+        choice=select_from_menu()
+        if choice==6:
+            print("Thanks for being here..")
+            return
+        return choice
         
+   
     
 def select_from_menu():
 
