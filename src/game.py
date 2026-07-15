@@ -1,7 +1,7 @@
 import colorama
 from colorama import Fore,Style
 colorama.init(autoreset=True)
-from src.passage import next_passage,index_difficulty,index_category
+from src.passage import next_passage,index_difficulty,index_category, category_passage
 from src.display import welcome,show_menu,show_passage,show_difficulty,show_category
 
 from src.statistics import count_errors
@@ -10,18 +10,43 @@ from src.timer import start_time,end_time,elapsed_time
 
 
 def play_game():
-    pass
-
-def main_menu():
-# This should only print the main menu 
     while True:
         show_menu()
         choice=select_from_menu()
-        if choice==6:
-            print(Fore.CYAN+Style.BRIGHT+"Thanks for being here.."+Style.RESET_ALL)
+        if choice==1:
+            passage=next_passage("easy")
+            show_passage(passage)
+            start_time()
+            user_input=get_user_input(passage)
+            end_time()
+        elif choice==2:
+            show_difficulty()
+            difficulty_choices=select_difficulty()
+            difficulty=index_difficulty[difficulty_choices]
+            passage=next_passage(difficulty)
+            show_passage(passage)
+            start=start_time()
+            user_input_difficulty=get_user_input(passage)
+            end=end_time()
+        elif choice==3:
+            show_category()
+            category_choices=select_category()
+            category=index_category[category_choices]
+            passage=category_passage(category)
+            show_passage(passage)
+            start=start_time()
+            user_input_category=get_user_input(passage)
+            end=end_time()
+        elif choice==6:
+            print(Fore.GREEN+Style.BRIGHT+"Thanks for playing...")
             return
-        return choice
+        else:
+            print(Fore.GREEN+Style.BRIGHT+"Coming soon...")
         
+
+def main_menu():
+# This should only print the main menu 
+    pass
     
 def select_from_menu():
 

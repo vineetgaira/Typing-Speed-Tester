@@ -1,7 +1,7 @@
-from src.game import main_menu
+from src.game import play_game
 
 def main():
-    main_menu()
+    play_game()
   
 if __name__ == "__main__":
     main()

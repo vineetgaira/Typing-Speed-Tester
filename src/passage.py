@@ -25,6 +25,7 @@ def load_all(difficulty):
     return passages
 
 def next_passage(difficulty):
+
     passages=load_all(difficulty)
     pos = index_difficulty.get(difficulty, 0)
 
@@ -51,3 +52,13 @@ def load_category(category):
     passages = text.split("\n\n")
 
     return passages
+
+def category_passage(category):
+
+    passages=load_all(category)
+    pos = index_category.get(category, 0)
+
+    passage=passages[pos%len(passages)]
+    index_category[category] = pos + 1
+
+    return passage
