@@ -2,7 +2,7 @@ import colorama
 from colorama import Fore,Style
 colorama.init(autoreset=True)
 from src.passage import next_passage,index_difficulty,index_category, category_passage
-from src.display import welcome,show_menu,show_passage,show_difficulty,show_category
+from src.display import welcome,show_menu,show_passage,show_difficulty,show_category,show_results
 
 from src.statistics import count_errors,calculate_accuracy,calculate_cpm,calculate_wpm
 from src.typing import get_user_input
@@ -22,7 +22,10 @@ def play_game():
             end=end_time()
             time=elapsed_time(start,end)
             errors=count_errors(passage,user_input)
-            wpm=calculate_wpm(time)
+            wpm=calculate_wpm(passage,time)
+            cpm=calculate_cpm(passage,time)
+            accuracy=calculate_accuracy(passage,errors)
+            show_results(wpm,cpm,accuracy)
 
         elif choice==2:
             show_difficulty()
@@ -36,7 +39,7 @@ def play_game():
             time=elapsed_time(start,end)
             count_errors(passage,user_input_difficulty)
             wpm=calculate_wpm(passage,time)
-            cpm=calculate_cpm()
+            cpm=calculate_cpm(passage,time)
         elif choice==3:
             show_category()
             category_choices=select_category()
