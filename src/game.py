@@ -64,12 +64,8 @@ def play_game():
             return
         else:
             print(Fore.GREEN+Style.BRIGHT+"Coming soon...")
-
         
 
-def main_menu():
-# This should only print the main menu 
-    pass
     
 def select_from_menu():
 
