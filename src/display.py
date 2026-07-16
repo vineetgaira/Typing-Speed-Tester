@@ -63,7 +63,7 @@ def show_passage(passage):
 def show_results(wpm,cpm,accuracy):
     print(Fore.WHITE + "  WPM :" + Fore.CYAN + f"{wpm}")
     print(Fore.WHITE + "  CPM :" + Fore.CYAN + f"{cpm}")
-    print(Fore.WHITE + "  ACCURACY :" + Fore.CYAN + f"{accuracy}%")
+    print(Fore.WHITE + "  ACCURACY :" + Fore.CYAN + f"{int(accuracy)}%")
 
 def show_best_score():
     pass
