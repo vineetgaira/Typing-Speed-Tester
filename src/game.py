@@ -22,8 +22,8 @@ def play_game():
             end=end_time()
             time=elapsed_time(start,end)
             errors=count_errors(passage,user_input)
-            wpm=calculate_wpm(passage,time)
-            cpm=calculate_cpm(passage,time)
+            wpm=calculate_wpm(user_input,time)
+            cpm=calculate_cpm(user_input,time)
             accuracy=calculate_accuracy(user_input,errors)
             show_results(wpm,cpm,accuracy)
 
@@ -38,7 +38,7 @@ def play_game():
             end=end_time()
             time=elapsed_time(start,end)
             count_errors(passage,user_input_difficulty)
-            wpm=calculate_wpm(passage,time)
+            wpm=calculate_wpm(user_input_difficulty,time)
             cpm=calculate_cpm(passage,time)
         elif choice==3:
             show_category()
