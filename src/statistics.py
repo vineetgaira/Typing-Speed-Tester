@@ -8,25 +8,37 @@ def count_errors(passage,user_input):
                 count+=1 
     return count
 
-def calculate_wpm(passage,elapsed_time):
+def calculate_wpm(user_input,elapsed_time):
 
-    words = len(passage)/5
+    if elapsed_time<=0:
+        return 0
 
-    return words/elapsed_time
+    words = len(user_input)/5
+
+    return int(words/elapsed_time)
 
 def net_wpm(wpm,count,elapsed_time):
 
+    if elapsed_time<=0:
+        return 0
+
     uncorrect_error_wpm = count/elapsed_time
 
-    return wpm-uncorrect_error_wpm
+    return int(wpm-uncorrect_error_wpm)
 
-def calculate_cpm(passage,elapsed_time):
+def calculate_cpm(user_input,elapsed_time):
     
-    return len(passage)/elapsed_time
+    cpm=len(user_input)/elapsed_time
+    return int(cpm)
 
-def calculate_accuracy(passage,count):
+def calculate_accuracy(user_input,count):
+
+    if len(user_input)<=0:
+        return 0
     
-    return (len(passage)/count)*100
+    accuracy= (len(user_input)-count)/len(user_input)
+
+    return int(accuracy)*100
 
 def save_score():
     

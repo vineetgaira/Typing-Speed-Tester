@@ -24,7 +24,7 @@ def play_game():
             errors=count_errors(passage,user_input)
             wpm=calculate_wpm(passage,time)
             cpm=calculate_cpm(passage,time)
-            accuracy=calculate_accuracy(passage,errors)
+            accuracy=calculate_accuracy(user_input,errors)
             show_results(wpm,cpm,accuracy)
 
         elif choice==2:
