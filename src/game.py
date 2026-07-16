@@ -11,12 +11,14 @@ from src.utils import clear_screen
 
 
 def play_game():
-    welcome()
     while True:
+        clear_screen()
+        welcome()
         show_menu()
         choice=select_from_menu()
         if choice==1:
             passage=next_passage("easy")
+            clear_screen()
             show_passage(passage)
             start=start_time()
             user_input=get_user_input(passage)
@@ -29,10 +31,12 @@ def play_game():
             show_results(wpm,cpm,accuracy)
 
         elif choice==2:
+            clear_screen()
             show_difficulty()
             difficulty_choices=select_difficulty()
             difficulty=index_difficulty[difficulty_choices]
             passage=next_passage(difficulty)
+            clear_screen()
             show_passage(passage)
             start=start_time()
             user_input_difficulty=get_user_input(passage)
@@ -43,11 +47,14 @@ def play_game():
             cpm=calculate_cpm(user_input_difficulty,time)
             accuracy=calculate_accuracy(user_input_difficulty,errors)
             show_results(wpm,cpm,accuracy)
+
         elif choice==3:
+            clear_screen()
             show_category()
             category_choices=select_category()
             category=index_category[category_choices]
             passage=category_passage(category)
+            clear_screen()
             show_passage(passage)
             start=start_time()
             user_input_category=get_user_input(passage)
