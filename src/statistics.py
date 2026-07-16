@@ -38,7 +38,7 @@ def calculate_accuracy(user_input,count):
     
     accuracy= (len(user_input)-count)/len(user_input)
 
-    return int(accuracy)*100
+    return accuracy*100
 
 def save_score():
     
