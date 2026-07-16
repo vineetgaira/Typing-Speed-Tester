@@ -7,7 +7,7 @@ from src.display import welcome,show_menu,show_passage,show_difficulty,show_cate
 from src.statistics import count_errors,calculate_accuracy,calculate_cpm,calculate_wpm
 from src.typing import get_user_input
 from src.timer import start_time,end_time, elapsed_time
-from src.utils import clear_screen
+from src.utils import clear_screen, pause
 
 
 def play_game():
@@ -29,6 +29,8 @@ def play_game():
             cpm=calculate_cpm(user_input,time)
             accuracy=calculate_accuracy(user_input,errors)
             show_results(wpm,cpm,accuracy)
+            pause()
+
 
         elif choice==2:
             clear_screen()
@@ -47,6 +49,7 @@ def play_game():
             cpm=calculate_cpm(user_input_difficulty,time)
             accuracy=calculate_accuracy(user_input_difficulty,errors)
             show_results(wpm,cpm,accuracy)
+            pause()
 
         elif choice==3:
             clear_screen()
@@ -65,6 +68,7 @@ def play_game():
             cpm=calculate_cpm(user_input_category,time)
             accuracy=calculate_accuracy(user_input_category,errors)
             show_results(wpm,cpm,accuracy)
+            pause()
             
         elif choice==6:
             print(Fore.GREEN+Style.BRIGHT+"Thanks for playing...")
