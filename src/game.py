@@ -37,9 +37,11 @@ def play_game():
             user_input_difficulty=get_user_input(passage)
             end=end_time()
             time=elapsed_time(start,end)
-            count_errors(passage,user_input_difficulty)
+            errors=count_errors(passage,user_input_difficulty)
             wpm=calculate_wpm(user_input_difficulty,time)
-            cpm=calculate_cpm(passage,time)
+            cpm=calculate_cpm(user_input_difficulty,time)
+            accuracy=calculate_accuracy(user_input_difficulty,errors)
+            show_results(wpm,cpm,accuracy)
         elif choice==3:
             show_category()
             category_choices=select_category()
@@ -51,6 +53,10 @@ def play_game():
             end=end_time()
             time=elapsed_time(start,end)
             count_errors(passage,user_input_category)
+            wpm=calculate_wpm(user_input_category,time)
+            cpm=calculate_cpm(user_input_category,time)
+            accuracy=calculate_accuracy(user_input_category,errors)
+            show_results(wpm,cpm,accuracy)
             
         elif choice==6:
             print(Fore.GREEN+Style.BRIGHT+"Thanks for playing...")
