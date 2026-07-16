@@ -1,6 +1,8 @@
-def clear_screen():
+import os
 
-        print("\033[H\033[J", end="")
+def clear_screen():
+   
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 def pause():
     pass
