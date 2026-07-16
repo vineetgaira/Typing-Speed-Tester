@@ -7,11 +7,12 @@ from src.display import welcome,show_menu,show_passage,show_difficulty,show_cate
 from src.statistics import count_errors,calculate_accuracy,calculate_cpm,calculate_wpm
 from src.typing import get_user_input
 from src.timer import start_time,end_time, elapsed_time
+from src.utils import clear_screen
 
 
 def play_game():
+    welcome()
     while True:
-        welcome()
         show_menu()
         choice=select_from_menu()
         if choice==1:
@@ -52,7 +53,7 @@ def play_game():
             user_input_category=get_user_input(passage)
             end=end_time()
             time=elapsed_time(start,end)
-            count_errors(passage,user_input_category)
+            errors=count_errors(passage,user_input_category)
             wpm=calculate_wpm(user_input_category,time)
             cpm=calculate_cpm(user_input_category,time)
             accuracy=calculate_accuracy(user_input_category,errors)
@@ -63,6 +64,7 @@ def play_game():
             return
         else:
             print(Fore.GREEN+Style.BRIGHT+"Coming soon...")
+
         
 
 def main_menu():
