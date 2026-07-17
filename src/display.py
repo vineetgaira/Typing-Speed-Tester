@@ -13,7 +13,7 @@ BANNER=r""" _____          _             ___                  _   _____       _
 
 def welcome():
     print(Fore.CYAN + BANNER)
-    print(Fore.YELLOW + Style.BRIGHT + " " * 20 + "by -Vineet Gaira\n")
+    print(Fore.YELLOW + Style.BRIGHT + " " * 20 )
 
 def show_menu():
 
