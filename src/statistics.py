@@ -40,13 +40,5 @@ def calculate_accuracy(user_input,count):
 
     return accuracy*100
 
-def save_score():
-    
-    with open("data/highscores.json", "r") as f:
-        data = json.load(f)  
-
-    with open ("data/history.json", "w") as f:
-        json.dump(data, f, indent=4)
-
 
     
