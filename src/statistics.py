@@ -1,5 +1,3 @@
-import json
-
 def count_errors(passage,user_input):
     count=0
     for i, letter in enumerate(passage):
