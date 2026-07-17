@@ -49,7 +49,4 @@ def save_score():
         json.dump(data, f, indent=4)
 
 
-def load_best_score():
-    pass
-
     

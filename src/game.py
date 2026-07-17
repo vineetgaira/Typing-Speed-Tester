@@ -2,7 +2,7 @@ import colorama
 from colorama import Fore,Style
 colorama.init(autoreset=True)
 from src.passage import next_passage,index_difficulty,index_category, category_passage
-from src.display import welcome,show_menu,show_passage,show_difficulty,show_category,show_results
+from src.display import welcome,show_menu,show_passage,show_difficulty,show_category,show_results,goodbye
 
 from src.statistics import count_errors,calculate_accuracy,calculate_cpm,calculate_wpm
 from src.typing import get_user_input
@@ -71,7 +71,7 @@ def play_game():
             pause()
             
         elif choice==6:
-            print(Fore.GREEN+Style.BRIGHT+"Thanks for playing...")
+            goodbye()
             return
         else:
             print(Fore.GREEN+Style.BRIGHT+"Coming soon...")

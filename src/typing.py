@@ -1,5 +1,3 @@
-import textwrap
-import colorama
 from colorama import Fore, Style
 
 def get_user_input(passage):

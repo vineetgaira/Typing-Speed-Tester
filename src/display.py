@@ -69,5 +69,5 @@ def show_best_score():
     pass
 
 def goodbye():
-    pass
+    print(Fore.LIGHTGREEN_EX+Style.BRIGHT+"Thanks for playing...."+Style.RESET_ALL)
 
