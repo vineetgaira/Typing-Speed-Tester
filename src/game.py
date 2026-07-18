@@ -100,13 +100,4 @@ def select_difficulty():
         except ValueError:
             print(Fore.RED+"Please select a valid integer.")
 
-def play_again():
 
-    while True:
-        user_exit=input(Fore.GREEN+Style.BRIGHT+"Do you wanna try again? y/n :"+Style.RESET_ALL)
-        if user_exit=="y":
-            return True
-        elif user_exit=="n":
-            return False
-        else:
-            print(Fore.RED+"Please enter a valid choice(y/n).")
