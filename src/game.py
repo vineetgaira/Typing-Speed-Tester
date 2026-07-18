@@ -67,7 +67,7 @@ def play_game():
 
 def select_from_menu():
 
-    valid_choices={1,2,3,4,5,6}
+    valid_choices={1,2,3,4,5}
     while True:
         try:
             choice=int(input(Fore.GREEN + Style.BRIGHT + "Enter your choice: "+Style.RESET_ALL))

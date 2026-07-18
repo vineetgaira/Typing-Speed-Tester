@@ -1,9 +1,9 @@
 def count_errors(passage,user_input):
+
     count=0
-    for i, letter in enumerate(passage):
-        for u, uletter in enumerate(user_input):
-            if i==u and letter!=uletter:
-                count+=1 
+    for char1, char2 in zip(passage,user_input):
+        if char1!=char2:
+            count+=1
     return count
 
 def calculate_wpm(user_input,elapsed_time):
