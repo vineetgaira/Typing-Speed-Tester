@@ -34,6 +34,7 @@ def play_game():
             accuracy=calculate_accuracy(user_input_difficulty,errors)
             show_results(wpm,cpm,accuracy)
             pause()
+            
 
         elif choice==2:
             clear_screen()
@@ -61,10 +62,6 @@ def play_game():
             print(Fore.GREEN+Style.BRIGHT+"Coming soon...")
             pause()
         
-
-    
-
-
 def select_from_menu():
 
     valid_choices={1,2,3,4,5}
