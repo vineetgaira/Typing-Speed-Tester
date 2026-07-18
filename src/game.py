@@ -100,4 +100,3 @@ def select_difficulty():
         except ValueError:
             print(Fore.RED+"Please select a valid integer.")
 
-

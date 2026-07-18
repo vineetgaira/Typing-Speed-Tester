@@ -7,4 +7,3 @@ def clear_screen():
 
 def pause():
     input(Fore.CYAN+Style.BRIGHT+"Press enter to continue..."+Style.RESET_ALL)
-

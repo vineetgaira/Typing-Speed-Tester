@@ -71,3 +71,4 @@ def category_passage(category):
     category_position[category] = pos + 1
 
     return passage
+
