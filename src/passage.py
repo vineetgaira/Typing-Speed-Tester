@@ -47,11 +47,6 @@ def next_passage(difficulty):
 
     return passage
 
-
-def reset_sequence(difficulty):
-
-    index_difficulty[difficulty]=0
-    
 def random_passage(difficulty):
 
 #This returns a random passage 
