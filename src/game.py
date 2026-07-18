@@ -17,22 +17,6 @@ def play_game():
         show_menu()
         choice=select_from_menu()
         if choice==1:
-            passage=next_passage("easy")
-            clear_screen()
-            show_passage(passage)
-            start=start_time()
-            user_input=get_user_input(passage)
-            end=end_time()
-            time=elapsed_time(start,end)
-            errors=count_errors(passage,user_input)
-            wpm=calculate_wpm(user_input,time)
-            cpm=calculate_cpm(user_input,time)
-            accuracy=calculate_accuracy(user_input,errors)
-            show_results(wpm,cpm,accuracy)
-            pause()
-
-
-        elif choice==2:
             clear_screen()
             show_difficulty()
             difficulty_choices=select_difficulty()
@@ -51,7 +35,7 @@ def play_game():
             show_results(wpm,cpm,accuracy)
             pause()
 
-        elif choice==3:
+        elif choice==2:
             clear_screen()
             show_category()
             category_choices=select_category()
@@ -70,14 +54,17 @@ def play_game():
             show_results(wpm,cpm,accuracy)
             pause()
             
-        elif choice==6:
+        elif choice==5:
             goodbye()
             return
         else:
             print(Fore.GREEN+Style.BRIGHT+"Coming soon...")
+            pause()
         
 
     
+
+
 def select_from_menu():
 
     valid_choices={1,2,3,4,5,6}

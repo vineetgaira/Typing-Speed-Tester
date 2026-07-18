@@ -21,12 +21,11 @@ def show_menu():
     print(Fore.GREEN + Style.BRIGHT + "               MAIN MENU")
     print(Fore.MAGENTA + "=" * 46)
 
-    print(Fore.WHITE + "  [1] " + Fore.CYAN + "Start Typing Test")
-    print(Fore.WHITE + "  [2] " + Fore.CYAN + "Select Difficulty (Easy / Medium / Hard)")
-    print(Fore.WHITE + "  [3] " + Fore.CYAN + "Select Category")
-    print(Fore.WHITE + "  [4] " + Fore.CYAN + "View High Scores")
-    print(Fore.WHITE + "  [5] " + Fore.CYAN + "View History")
-    print(Fore.WHITE + "  [6] " + Fore.RED + "Exit")
+    print(Fore.WHITE + "  [1] " + Fore.CYAN + "Select Difficulty (Easy / Medium / Hard)")
+    print(Fore.WHITE + "  [2] " + Fore.CYAN + "Select Category")
+    print(Fore.WHITE + "  [3] " + Fore.CYAN + "View High Scores")
+    print(Fore.WHITE + "  [4] " + Fore.CYAN + "View History")
+    print(Fore.WHITE + "  [5] " + Fore.RED + "Exit")
 
 
 def show_difficulty():
