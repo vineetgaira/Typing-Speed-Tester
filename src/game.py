@@ -55,16 +55,13 @@ def play_game():
             show_results(wpm,cpm,accuracy)
             pause()
             
-        elif choice==5:
+        else:
             goodbye()
             return
-        else:
-            print(Fore.GREEN+Style.BRIGHT+"Coming soon...")
-            pause()
         
 def select_from_menu():
 
-    valid_choices={1,2,3,4,5}
+    valid_choices={1,2,3}
     while True:
         try:
             choice=int(input(Fore.GREEN + Style.BRIGHT + "Enter your choice: "+Style.RESET_ALL))
