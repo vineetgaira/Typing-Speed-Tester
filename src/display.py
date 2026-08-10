@@ -4,7 +4,8 @@ from colorama import Fore, Style
 colorama.init(autoreset=True)
 
 
-BANNER=r""" _____          _             ___                  _   _____       _
+BANNER=r"""
+ _____          _             ___                  _   _____       _
 |_   _|  _ _ __(_)_ _  __ _  / __|_ __  ___ ___ __| | |_   _|__ __| |_ ___ _ _
   | || || | '_ \ | ' \/ _` | \__ \ '_ \/ -_) -_) _` |   | |/ -_|_-<  _/ -_) '_|
   |_| \_, | .__/_|_||_\__, | |___/ .__/\___\___\__,_|   |_|\___/__/\__\___|_|
@@ -13,7 +14,6 @@ BANNER=r""" _____          _             ___                  _   _____       _
 
 def welcome():
     print(Fore.CYAN + BANNER)
-    print(Fore.YELLOW + Style.BRIGHT + " " * 20 )
 
 def show_menu():
 
