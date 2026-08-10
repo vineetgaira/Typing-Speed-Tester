@@ -1,13 +1,13 @@
 import colorama
 from colorama import Fore,Style
 colorama.init(autoreset=True)
-from src.passage import next_passage,index_difficulty,index_category, category_passage
+from src.passage import next_passage, category_passage
 from src.display import welcome,show_menu,show_passage,show_difficulty,show_category,show_results,goodbye
-
+from src.constants import MENU_CHOICES, index_category, index_difficulty
 from src.statistics import count_errors,calculate_accuracy,calculate_cpm,calculate_wpm
 from src.typing import get_user_input
 from src.timer import start_time,end_time, elapsed_time
-from src.utils import clear_screen, pause
+from src.utils import clear_screen, pause, show_error
 
 
 def play_game():
@@ -15,13 +15,12 @@ def play_game():
         clear_screen()
         welcome()
         show_menu()
-        choice=select_from_menu()
-        if choice==1:
+        choice=menu_choice(MENU_CHOICES, "Choice: ")
+        if choice=="difficulty":
             clear_screen()
             show_difficulty()
-            difficulty_choices=select_difficulty()
-            difficulty=index_difficulty[difficulty_choices]
-            passage=next_passage(difficulty)
+            difficulty_choices=menu_choice(index_difficulty, "Choice: ")
+            passage=next_passage(difficulty_choices)
             clear_screen()
             show_passage(passage)
             start=start_time()
@@ -36,12 +35,11 @@ def play_game():
             pause()
             
 
-        elif choice==2:
+        elif choice=="category":
             clear_screen()
             show_category()
-            category_choices=select_category()
-            category=index_category[category_choices]
-            passage=category_passage(category)
+            category_choices=menu_choice(index_category, "Choice: ")
+            passage=category_passage(category_choices)
             clear_screen()
             show_passage(passage)
             start=start_time()
@@ -59,41 +57,15 @@ def play_game():
             goodbye()
             return
         
-def select_from_menu():
-
-    valid_choices={1,2,3}
+def menu_choice(options: dict, prompt : str ) -> str:
+    valid_choices=set(options.keys())
     while True:
         try:
-            choice=int(input(Fore.GREEN + Style.BRIGHT + "Enter your choice: "+Style.RESET_ALL))
+            choice=int(input(Fore.GREEN + Style.BRIGHT + prompt +Style.RESET_ALL))
             if choice in valid_choices:
-                return choice
+                return options[choice]
             else:
-                print(Fore.RED+"Please select a valid number.")
+                show_error("Please enter a valid number.")
         except ValueError:
-            print(Fore.RED+"Please select a valid integer.")
+            show_error("Please enter a valid integer.")
     
-def select_category():
-
-    valid_choices={1,2,3,4,5,6}
-    while True:
-        try:
-            user_choice=int(input(Fore.GREEN+Style.BRIGHT+"Select category: "+Style.RESET_ALL))
-            if user_choice in valid_choices:
-                return user_choice
-            else:
-                print(Fore.RED+"Please select a valid number.")
-        except ValueError:
-            print(Fore.RED+"Please select a valid integer.")
-
-def select_difficulty():
-    valid_choices={1,2,3}
-    while True:
-        try:
-            user_choice=int(input(Fore.GREEN+Style.BRIGHT+"Select difficulty: "+Style.RESET_ALL))
-            if user_choice in valid_choices:
-                return user_choice
-            else:
-                print(Fore.RED+"Please select a valid number.")
-        except ValueError:
-            print(Fore.RED+"Please select a valid integer.")
-
