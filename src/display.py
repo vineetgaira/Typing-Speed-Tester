@@ -62,8 +62,6 @@ def show_results(wpm,cpm,accuracy):
     print(Fore.WHITE + "  CPM :" + Fore.CYAN + f"{cpm}")
     print(Fore.WHITE + "  ACCURACY :" + Fore.CYAN + f"{int(accuracy)}%")
 
-def show_best_score():
-    pass
 
 def goodbye():
     print(Fore.LIGHTGREEN_EX+Style.BRIGHT+"Thanks for playing...."+Style.RESET_ALL)
