@@ -10,49 +10,44 @@ from src.timer import start_time,end_time, elapsed_time
 from src.utils import clear_screen, pause, show_error
 
 
+def run_round(passage):
+    clear_screen()
+    show_passage(passage)
+    start = start_time()
+    user_input = get_user_input(passage)
+    end = end_time()
+    time = elapsed_time(start, end)
+
+    errors = count_errors(passage, user_input)
+    wpm = calculate_wpm(user_input, time)
+    cpm = calculate_cpm(user_input, time)
+    accuracy = calculate_accuracy(user_input, errors)
+
+    show_results(wpm, cpm, accuracy)
+    pause()
+
+
 def play_game():
     while True:
         clear_screen()
         welcome()
         show_menu()
-        choice=menu_choice(MENU_CHOICES, "Choice: ")
-        if choice=="difficulty":
+        choice = menu_choice(MENU_CHOICES, "Choice: ")
+
+        if choice == "difficulty":
             clear_screen()
             show_difficulty()
-            difficulty_choices=menu_choice(index_difficulty, "Choice: ")
-            passage=next_passage(difficulty_choices)
-            clear_screen()
-            show_passage(passage)
-            start=start_time()
-            user_input_difficulty=get_user_input(passage)
-            end=end_time()
-            time=elapsed_time(start,end)
-            errors=count_errors(passage,user_input_difficulty)
-            wpm=calculate_wpm(user_input_difficulty,time)
-            cpm=calculate_cpm(user_input_difficulty,time)
-            accuracy=calculate_accuracy(user_input_difficulty,errors)
-            show_results(wpm,cpm,accuracy)
-            pause()
-            
+            difficulty_choice = menu_choice(index_difficulty, "Choice: ")
+            passage = next_passage(difficulty_choice)
+            run_round(passage)
 
-        elif choice=="category":
+        elif choice == "category":
             clear_screen()
             show_category()
-            category_choices=menu_choice(index_category, "Choice: ")
-            passage=category_passage(category_choices)
-            clear_screen()
-            show_passage(passage)
-            start=start_time()
-            user_input_category=get_user_input(passage)
-            end=end_time()
-            time=elapsed_time(start,end)
-            errors=count_errors(passage,user_input_category)
-            wpm=calculate_wpm(user_input_category,time)
-            cpm=calculate_cpm(user_input_category,time)
-            accuracy=calculate_accuracy(user_input_category,errors)
-            show_results(wpm,cpm,accuracy)
-            pause()
-            
+            category_choice = menu_choice(index_category, "Choice: ")
+            passage = category_passage(category_choice)
+            run_round(passage)
+
         else:
             goodbye()
             return
