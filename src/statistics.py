@@ -1,3 +1,4 @@
+# This will count all the errors
 def count_errors(passage,user_input):
 
     count=0
@@ -5,7 +6,7 @@ def count_errors(passage,user_input):
         if char1!=char2:
             count+=1
     return count
-
+# This will calculate word per minute (wpm)
 def calculate_wpm(user_input,elapsed_time):
 
     if elapsed_time<=0:
@@ -15,6 +16,7 @@ def calculate_wpm(user_input,elapsed_time):
 
     return int(words/elapsed_time)
 
+# This will calculate net wpm
 def net_wpm(wpm,count,elapsed_time):
 
     if elapsed_time<=0:
@@ -24,11 +26,13 @@ def net_wpm(wpm,count,elapsed_time):
 
     return int(wpm-uncorrect_error_wpm)
 
+# This will calculate cpm
 def calculate_cpm(user_input,elapsed_time):
     
     cpm=len(user_input)/elapsed_time
     return int(cpm)
 
+# This calculates accuracy
 def calculate_accuracy(user_input,count):
 
     if len(user_input)<=0:
